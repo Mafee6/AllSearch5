@@ -1,0 +1,49 @@
+:root{
+    --background0: rgb(34,34,34);
+    --textcolor: rgb(255,255,255);
+    --searchbarcolor: rgb(48, 48, 48);
+    --box-shadow-color: rgb(0,0,0);
+    --selection-color: black;
+    --selection-bg-color: rgb(128, 128, 128);
+    --font: "Segoe UI";
+}
+
+body{
+    background-color: var(--background0);
+    color: var(--textcolor);
+    font-family: var(--font);
+    overflow: clip;
+    margin: 0;
+}
+
+.SearchBar-Container{
+    width: 100vw;
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SearchBar{
+    background: var(--searchbarcolor);
+    padding: 1.8vh;
+    border-radius: 10vh;
+    width: 50vw; 
+    height: 3vh;
+    box-shadow: 0 0 0.6vh var(--box-shadow-color);    
+}
+
+.SearchBar input{
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    width: 98%;
+    font-size: 2vh;
+}
+
+.SearchBar input::selection{
+    color: var(--selection-color);
+    background-color: var(--selection-bg-color);   
+}
