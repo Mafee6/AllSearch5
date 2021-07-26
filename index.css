@@ -1,7 +1,7 @@
 :root{
     --background0: rgb(34,34,34);
     --textcolor: rgb(255,255,255);
-    --searchbarcolor: rgb(48, 48, 48);
+    --searchbarcolor: rgba(46, 46, 46, 0.8);
     --box-shadow-color: rgb(0,0,0);
     --selection-color: white;
     --selection-bg-color: rgb(25,25,25);
@@ -14,11 +14,24 @@ body{
     font-family: var(--font);
     overflow: clip;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bg 0.8s ease-out;
+}
+
+.app-container{
+    width: 100vw;
+    height: 100vh;
 }
 
 .SearchBar-Container{
     width: 100vw;
-    height: 75vh;
+    height: 80vh;
 
     display: flex;
     justify-content: center;
@@ -27,11 +40,17 @@ body{
 
 .SearchBar{
     background: var(--searchbarcolor);
-    padding: 1.8vh;
+    backdrop-filter: blur(0.5vh);
     border-radius: 10vh;
-    width: 50vw; 
-    height: 3vh;
-    box-shadow: 0 0 0.6vh var(--box-shadow-color);    
+    width: 40vw; 
+    box-shadow: 0 0 0.8vh var(--box-shadow-color);    
+    padding: 1.5vh;
+    height: 1.5vw;
+
+    display: flex;
+    align-items: center;
+
+    animation: search 0.4s ease-out;
 }
 
 .SearchBar-Container .SearchTitle{
@@ -39,11 +58,13 @@ body{
     display: flex;
     justify-content: center;
     margin-bottom: 2vh;
+    animation: title 0.5s ease-in;
 }
 
 .SearchBar-Container .SearchTitle svg{
     width: 28vw;
     height: 28vh;
+    filter: drop-shadow(0 0 0.6vh var(--box-shadow-color));
 }
 
 .SearchBar input{
@@ -51,11 +72,60 @@ body{
     outline: none;
     border: none;
     color: white;
-    width: 98%;
-    font-size: 2vh;
+    width: 400%;
+    font-size: 2.2vh;
+    margin-right: 1%;
+}
+ 
+.SearchBar .searchbar-buttons{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    margin-bottom: 0.1vh;
+}
+
+.SearchBar .searchbar-buttons svg{
+    width: 2.2vh;
+    height: auto;
+    transition: filter 0.3s ease-in;
+    cursor: pointer;
+}
+
+.SearchBar .searchbar-buttons svg:hover{
+    filter: brightness(60%)
 }
 
 .SearchBar input::selection{
     color: var(--selection-color);
     background-color: var(--selection-bg-color); 
+}
+
+@keyframes bg{
+    from{
+        backdrop-filter: blur(10vh);
+    }
+
+    to{
+        backdrop-filter: blur(0);
+    }
+}
+
+@keyframes search{
+    from{
+        transform: translateY(5vh);
+        opacity: 0;
+    }   
+    to{
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes title{
+    from{
+        filter: opacity(0)
+    }
+    to{
+        filter: opacity(1)
+    }
 }
