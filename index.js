@@ -8,7 +8,7 @@ fetch("icons/icon.svg")
             });
     }).catch(() => {
         SearchTitle.innerHTML = "Mafee All Search"
-    })
+    });
 
 setTimeout(() => {
     document.body.style.backgroundImage = "url(https://source.unsplash.com/collection/70801487/720x480)";

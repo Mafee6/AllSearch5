@@ -123,9 +123,9 @@ body{
 
 @keyframes title{
     from{
-        filter: opacity(0)
+        filter: opacity(0);
     }
     to{
-        filter: opacity(1)
+        filter: opacity(1);
     }
 }
