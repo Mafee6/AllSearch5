@@ -2,13 +2,13 @@
     --background0: rgb(34,34,34);
     --textcolor: rgb(255,255,255);
     --searchbarcolor: rgba(46, 46, 46, 0.8);
-    --box-shadow-color: rgb(0,0,0);
+    --box-shadow-color: rgb(0,0,0, .6);
     --selection-color: white;
     --selection-bg-color: rgb(25,25,25);
     --font: "Segoe UI";
 }
 
-body{
+body {
     background-color: var(--background0);
     color: var(--textcolor);
     font-family: var(--font);
@@ -18,7 +18,7 @@ body{
     height: 100vh;
 }
 
-body{
+body {
     background-repeat: no-repeat;
     background-size: cover;
     animation: bg 0.8s ease-out;
@@ -41,16 +41,18 @@ body{
 .SearchBar{
     background: var(--searchbarcolor);
     backdrop-filter: blur(0.5vh);
-    border-radius: 10vh;
+    border-radius: 5vh;
     width: 40vw; 
     box-shadow: 0 0 0.8vh var(--box-shadow-color);    
-    padding: 1.5vh;
+    padding: 10px;
     height: 1.5vw;
 
     display: flex;
     align-items: center;
 
     animation: search 0.4s ease-out;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .SearchBar-Container .SearchTitle{
@@ -77,11 +79,17 @@ body{
     margin-right: 1%;
 }
  
-.SearchBar .searchbar-buttons{
+.SearchBar .searchbar-buttons {
     display: flex;
     width: 20%;
     height: 100%;
     margin-bottom: 0.1vh;
+    align-items: center;
+}
+
+.SearchBar .searchbar-buttons > div {
+    display: flex;
+    align-items: center;
 }
 
 .SearchBar .searchbar-buttons svg{
